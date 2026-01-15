@@ -17,9 +17,6 @@ namespace OpticShopApp
         private const string ConnectionString =
     @"Data Source=DESKTOP-F33QBUH\SQLEXPRESS;Initial Catalog=OpticShop;Integrated Security=True";
 
-        // =======================
-        // LOAD
-        // =======================
         private void MainForm_Load(object sender, EventArgs e)
         {
             categoriesTableAdapter.Fill(opticShopDataSet.Categories);
@@ -48,9 +45,6 @@ namespace OpticShopApp
             tableAdapterManager.UpdateAll(opticShopDataSet);
         }
 
-        // =======================
-        // FILTER
-        // =======================
         private void ApplyFilter()
         {
             if (!_formLoaded) return;
@@ -109,9 +103,6 @@ namespace OpticShopApp
             ApplySearchHighlight();
         }
 
-        // =======================
-        // SEARCH
-        // =======================
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             ApplySearchHighlight();
@@ -136,9 +127,6 @@ namespace OpticShopApp
                         cell.Style.BackColor = Color.Lime;
         }
 
-        // =======================
-        // VIEW
-        // =======================
         private void productsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = productsBindingSource;
@@ -154,13 +142,9 @@ namespace OpticShopApp
             dataGridView1.DataSource = brandsBindingSource;
         }
 
-        // =======================
-        // CRUD
-        // =======================
         private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditProductForm f = new EditProductForm();   // режим створення
-
+            EditProductForm f = new EditProductForm();   
             if (f.ShowDialog() == DialogResult.OK)
             {
                 productsTableAdapter.Fill(opticShopDataSet.Products);
@@ -199,9 +183,6 @@ namespace OpticShopApp
             }
         }
 
-        // =======================
-        // QUERY EDITOR
-        // =======================
         private void queryEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QueryEdit f = new QueryEdit();
@@ -209,9 +190,6 @@ namespace OpticShopApp
             productsTableAdapter.Fill(opticShopDataSet.Products);
         }
 
-        // =======================
-        // DESIGNER FIXES
-        // =======================
         private void addToolStripMenuItem_Click(object sender, EventArgs e) { }
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void comboBoxCategoryFilter_SelectedIndexChanged_1(object sender, EventArgs e) { }

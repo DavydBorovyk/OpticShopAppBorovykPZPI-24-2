@@ -7,7 +7,6 @@ namespace OpticShopApp
 {
     public partial class QueryEdit : Form
     {
-        // ЗАМІНИ ТІЛЬКИ ІМʼЯ СЕРВЕРА, ЯКЩО ВІДРІЗНЯЄТЬСЯ
         private const string ConnectionString =
             @"Data Source=DESKTOP-F33QBUH\SQLEXPRESS;Initial Catalog=OpticShop;Integrated Security=True";
 
@@ -18,12 +17,9 @@ namespace OpticShopApp
 
         private void QueryEdit_Load(object sender, EventArgs e)
         {
-            // Нічого не потрібно
+            
         }
 
-        // ================================
-        // DO SQL
-        // ================================
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -45,15 +41,11 @@ namespace OpticShopApp
             }
         }
 
-        // ЦЕ місток для Designer (не видаляти!)
         private void button1_Click_1(object sender, EventArgs e)
         {
             button1_Click(sender, e);
         }
 
-        // ================================
-        // CLEAR
-        // ================================
         private void buttonClear_Click(object sender, EventArgs e)
         {
             TestInput.Clear();
@@ -61,9 +53,6 @@ namespace OpticShopApp
             TestInput.Focus();
         }
 
-        // ================================
-        // EXIT
-        // ================================
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
